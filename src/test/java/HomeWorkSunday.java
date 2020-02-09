@@ -5,7 +5,7 @@ public class HomeWorkSunday {
     @Test
     public void main() {
         //1. подать марку машины, цену и пробег и получить в консоле:
-       // "Продаём машину Жига с пробегом 999999 за 00.01 денег"      
+       // "Продаём машину Жига с пробегом 999999 за 00.01 денег"
         //2. Зная, что 1 литр топлива стоит 3.57 евро, написать метод,
         // который принимает расход самолёта на 100 км и растояние пройдениое им
         // и в консоле напишет сколько денег ушло на топливо на конкретный перелёт
@@ -40,7 +40,7 @@ public class HomeWorkSunday {
         int preYear = firstPartPK % 100;
         int year = 1900 + preYear;
         int preMonth = ((firstPartPK - preYear)/100)%100 ;//110180-80=11.0100
-        String month = "";
+        String month;
         switch(preMonth) {
             case 1:
                 month = "января";
@@ -82,9 +82,8 @@ public class HomeWorkSunday {
                 month = "NA";
             }
 
-
         int day =(int)(firstPartPK/10000);
-        if ((month != "NA") && (day != 0)){
+        if ((!month.equals("NA")) && (day != 0)){
             System.out.println("Дата вашего рождения: " + day + " " + month + " " + year + " года!");
         } else System.out.println("Дата не существует");
     }
