@@ -5,7 +5,7 @@ import static java.lang.System.out;
 
 public class HomeWork1 {
     @Test
-    public void main (){
+    public void main() {
 //        Написать методы, что бы я мог:
 //        1. подать имя и возраст человека и мне бы красиво показалось: "Привет, Дима, тебе увы аж 33"
 //        2. подать количество проеханных километров и сколько топлива я залил и получить расход на сотню
@@ -33,16 +33,19 @@ public class HomeWork1 {
         wheel(radius);
 
     }
-    private void nameAgeString(String name, int age){
-        out.println("Привет, "+ name + ", тебе увы аж "+ age);
+
+    private void nameAgeString(String name, int age) {
+        out.println("Привет, " + name + ", тебе увы аж " + age);
     }
-    private void gasComsumption(double gas, double distance){
-        double consumption = Math.round(gas/distance*100);
-        out.println("Расход на 100 км равен "+ consumption + "л.");
+
+    private void gasComsumption(double gas, double distance) {
+        double consumption = Math.round(gas / distance * 100);
+        out.println("Расход на 100 км равен " + consumption + "л.");
     }
-    private void wheel(double radiusSm){
-        double lengthSm =  Math.PI*2*radiusSm;
+
+    private void wheel(double radiusSm) {
+        double lengthSm = Math.PI * 2 * radiusSm;
         out.println("Длина окружности колеса равна" + lengthSm + "в сантиметрах");
-        out.println("За 1000 км данное колеса сделает " + Math.round(1000*1000*100/lengthSm) + "полных оборотов" );
+        out.println("За 1000 км данное колеса сделает " + Math.round(1000 * 1000 * 100 / lengthSm) + "полных оборотов");
     }
 }

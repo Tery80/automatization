@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class LengthBetweenPoints {
 
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter Coordinate X1");
@@ -20,7 +20,7 @@ public class LengthBetweenPoints {
         double coordinateDifferenceX = (coordinateX2 - coordinateX1);
         double coordinateDifferenceY = (coordinateY2 - coordinateY1);
 
-        double length = Math.sqrt(Math.abs(coordinateDifferenceX)+Math.abs(coordinateDifferenceY));
-        System.out.print("Length = "+ length);
+        double length = Math.sqrt(Math.abs(coordinateDifferenceX) + Math.abs(coordinateDifferenceY));
+        System.out.print("Length = " + length);
     }
 }

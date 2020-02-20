@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class HomeWork1 {
-    public static void main (String[] args){
+    public static void main(String[] args) {
 //        Написать методы, что бы я мог:
 //        1. подать имя и возраст человека и мне бы красиво показалось: "Привет, Дима, тебе увы аж 33"
 //        2. подать количество проеханных километров и сколько топлива я залил и получить расход на сотню
@@ -30,16 +30,19 @@ public class HomeWork1 {
         scanner.close();
 
     }
-    private static void nameAgeString(String name, int age){
-        System.out.println("Привет, "+ name + ", тебе увы аж "+ age);
+
+    private static void nameAgeString(String name, int age) {
+        System.out.println("Привет, " + name + ", тебе увы аж " + age);
     }
-    private static void gasComsumption(double gas, double distance){
-        double consumption = Math.round(gas/distance*100);
-        System.out.println("Расход на 100 км равен "+ consumption + "л.");
+
+    private static void gasComsumption(double gas, double distance) {
+        double consumption = Math.round(gas / distance * 100);
+        System.out.println("Расход на 100 км равен " + consumption + "л.");
     }
-    private static void wheel(double radiusSm){
-        double lengthSm =  Math.PI*2*radiusSm;
+
+    private static void wheel(double radiusSm) {
+        double lengthSm = Math.PI * 2 * radiusSm;
         System.out.println("Длина окружности колеса равна" + lengthSm + "в сантиметрах");
-        System.out.println("За 1000 км данное колеса сделает " + Math.round(1000*1000*100/lengthSm) + "полных оборотов" );
+        System.out.println("За 1000 км данное колеса сделает " + Math.round(1000 * 1000 * 100 / lengthSm) + "полных оборотов");
     }
 }
