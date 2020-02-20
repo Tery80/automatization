@@ -10,7 +10,6 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-
 public class DelfiFirstTest {
     private final By HOME_PAGE_ARTICLE = By.xpath(".//h1[contains(@class, 'headline__title')]");
     private final By PAGE_ARTICLE = By.xpath(".//h1[contains(@class,'d-inline')]");
@@ -45,9 +44,9 @@ public class DelfiFirstTest {
         WebElement commentsPageTitle = driver.findElement(PAGE_COMMENTS_TITLE);
         String commentsTitleText = commentsPageTitle.getText();
         List<WebElement> commentPageCommentCountList = driver.findElements(PAGE_COMMENTS_COUNT);
-        Integer commentPageCommentCount = 0 ;
+        Integer commentPageCommentCount = 0;
         String commentPageCommentCountStr;
-        for (int i=0;i<2;i++){
+        for (int i = 0; i < 2; i++) {
             commentPageCommentCountStr = commentPageCommentCountList.get(i).getText();
             commentPageCommentCount = commentPageCommentCount + convertCommentsToInt(commentPageCommentCountStr);
         }
@@ -61,9 +60,10 @@ public class DelfiFirstTest {
         assertEquals(commentPageCommentCount, articleCommentCount, "comments at comments page and article page are different");
         driver.quit();
     }
-        private static Integer convertCommentsToInt(String commentCountString){
-            String commentCountStr = commentCountString.replaceAll("[()]","") ;
-            return Integer.parseInt(commentCountStr);
-        }
+
+    private static Integer convertCommentsToInt(String commentCountString) {
+        String commentCountStr = commentCountString.replaceAll("[()]", "");
+        return Integer.parseInt(commentCountStr);
+    }
 
 }
