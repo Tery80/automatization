@@ -13,7 +13,7 @@ public class Delfi {
     private final By WEB_ARTICLE = By.xpath(".//article");
     private final By HOME_PAGE_ARTICLE = By.xpath(".//h1[contains(@class, 'headline__title')]");
     private final By PAGE_ARTICLE = By.xpath(".//h1[contains(@class,'d-inline')]");
-    private final By PAGE_ARTICLE_COMMENT = By.xpath(".//div[contains(@class,'article-title')]/a");
+    private final By PAGE_ARTICLE_COMMENT = By.xpath(".//a[contains(@class, 'comment-count')]");
     private final By PAGE_COMMENTS_TITLE = By.xpath(".//h1[@class='article-title']");
     private final By HOME_PAGE_ARTICLE_COMMENT_COUNT = By.xpath(".//a[contains(@class, 'comment-count')]");
     private final By PAGE_ARTICLE_COMMENT_COUNT = By.xpath(".//a[contains(@class,'text-red-ribbon')]");
@@ -33,7 +33,7 @@ public class Delfi {
         List<WebElement> commentExistingCheck = new ArrayList<>() ;
         String articleName = null;
         Integer commentCount = 0;
-        for (int i = 0; i<(ARTICLES_AMOUNT-1); i++ ){
+        for (int i = 0; i<(ARTICLES_AMOUNT); i++ ){
             articleName = webArticles.get(i).findElement(HOME_PAGE_ARTICLE).getText();
             webArticleNames.add(i,articleName);
             commentExistingCheck = webArticles.get(i).findElements(PAGE_ARTICLE_COMMENT);
@@ -43,8 +43,9 @@ public class Delfi {
                 commentCount=0;
             }
             commentCounts.add(i, commentCount);
-            System.out.println(articleName +" " + commentCount);
         }
+
+
 
 
 //        String secondArticleTitleText = firstArticleTitleList.get(1).getText();
@@ -52,9 +53,11 @@ public class Delfi {
 //        String homePageCommentCountSecondArticleStr = homePageCommentCountList.get(1).getText();
 //        Integer homePageCommentCountSecondArticle = convertCommentsToInt(homePageCommentCountSecondArticleStr);
 //        firstArticleTitleList.get(1).click();
+        driver.quit();
     }
     private static Integer convertCommentsToInt(WebElement comment) {
         String commentCountStr = comment.getText().replaceAll("[()]", "");
         return Integer.parseInt(commentCountStr);
     }
+
 }
