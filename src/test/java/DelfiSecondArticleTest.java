@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class DelfiFirstTest {
+public class DelfiSecondArticleTest {
     private final By HOME_PAGE_ARTICLE = By.xpath(".//h1[contains(@class, 'headline__title')]");
     private final By PAGE_ARTICLE = By.xpath(".//h1[contains(@class,'d-inline')]");
     private final By PAGE_ARTICLE_COMMENT = By.xpath("//div[contains(@class,'article-title')]/a");
@@ -26,6 +25,7 @@ public class DelfiFirstTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.get("https://rus.delfi.lv/");
+
         List<WebElement> firstArticleTitleList = driver.findElements(HOME_PAGE_ARTICLE);
         String secondArticleTitleText = firstArticleTitleList.get(1).getText();
         List<WebElement> homePageCommentCountList = driver.findElements(HOME_PAGE_ARTICLE_COMMENT_COUNT);
