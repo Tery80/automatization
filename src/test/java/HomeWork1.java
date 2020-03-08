@@ -1,4 +1,3 @@
-
 import org.junit.jupiter.api.Test;
 
 import static java.lang.System.out;
