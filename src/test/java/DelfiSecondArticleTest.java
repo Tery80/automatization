@@ -56,13 +56,11 @@ public class DelfiSecondArticleTest {
             String commentCountArticlePage = commentExistingCheckPage.get(0).getText();
             articleCommentCount = convertCommentsToInt(commentCountArticlePage);
         } else {
-            LOGGER.info("Comments are missing."); 
+            LOGGER.info("Comments are missing.");
             LOGGER.info("Check article names at main and article page");
             assertEquals(secondArticleTitleText.trim(), articleTitleText.trim(), "titles first page and article page are not equals");
-            System.out.println("Articles are the same, but there are no comment at all");
-            driver.quit();
-            System.exit(0);
         }
+
         LOGGER.info("Opens Delfi Comment Page");
         commentExistingCheckPage.get(0).click();
 
