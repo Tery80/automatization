@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DelfiSecondArticleTest {
-    private final By WEB_ARTICLE = By.xpath(".//article");
+    private final By WEB_ARTICLE = By.tagName("article");
     private final By HOME_PAGE_ARTICLE = By.xpath(".//h1[contains(@class, 'headline__title')]");
     private final By HOME_PAGE_ARTICLE_COMMENT_COUNT = By.xpath(".//a[contains(@class, 'comment-count')]");
 
