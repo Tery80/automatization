@@ -7,30 +7,24 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class HomePage {
+public class HomePageLesson {
+
     private BaseFunction baseFunction;
     private final Logger LOGGER = LogManager.getLogger(HomePage.class);
     private final By WEB_ARTICLE = By.xpath(".//article");
     private final By HOME_PAGE_ARTICLE = By.xpath(".//h1[contains(@class, 'headline__title')]");
     private final By HOME_PAGE_ARTICLE_COMMENT_COUNT = By.xpath(".//a[contains(@class, 'comment-count')]");
 
-    public HomePage(BaseFunction baseFunction){
+    public HomePageLesson(BaseFunction baseFunction){
         this.baseFunction = baseFunction;
     }
-
-    // get Articles
-    public List<WebElement> getAllArticles(){
-
-        return baseFunction.getElementList(WEB_ARTICLE);
+    public String getTitleById(Integer id){
+        List<WebElement> titles = baseFunction.getElementList(HOME_PAGE_ARTICLE);
+        return titles.get(id-1).getText();
     }
-    // get Title
-    public String getArticleTitle(Integer articleNumber){
 
-        String articleTitle = getAllArticles().get(articleNumber-1).findElement(HOME_PAGE_ARTICLE).getText();
-
-        return articleTitle;
+    public void goToArticleById(Integer id){
+        List<WebElement> titles = baseFunction.getElementList(HOME_PAGE_ARTICLE);
+        baseFunction.click(titles.get(id-1));
     }
-    // get COmments
-    // go to next page
-
 }
