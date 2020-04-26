@@ -1,4 +1,4 @@
-package Oop;
+package oop;
 
 public class DelfiTest {
 }
